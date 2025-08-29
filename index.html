@@ -40,3 +40,154 @@
         .subtitle{color:#888;font-size:1.1rem;margin-bottom:3rem;opacity:0;animation:fadeInUp 1s ease 1s forwards}
         @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
         .cta-button{background:linear-gradient(45deg,#ff0096,#00d4ff);border:none;padding:1rem 2rem;
+          font-size:1.1rem;color:#fff;border-radius:50px;cursor:pointer;text-decoration:none;display:inline-block;
+          transition:all .3s ease;position:relative;overflow:hidden;opacity:0;animation:fadeInUp 1s ease 1.5s forwards}
+        .cta-button:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(255,0,150,.4)}
+        .recursive-stack{background:linear-gradient(135deg,rgba(255,0,150,.05) 0%,rgba(0,212,255,.05) 100%)}
+        .stack-title{font-size:clamp(2.5rem,5vw,4rem);background:linear-gradient(45deg,#fff,#00d4ff);
+          -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:2rem;text-align:center}
+        .stack-table{width:100%;background:rgba(0,0,0,.4);border-radius:20px;overflow:hidden;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1)}
+        .stack-table th{background:linear-gradient(45deg,#ff0096,#00d4ff);color:#fff;padding:1.5rem 1rem;text-align:left;font-weight:600;font-size:1.1rem}
+        .stack-table td{padding:1.5rem 1rem;border-bottom:1px solid rgba(255,255,255,.1);vertical-align:top}
+        .stack-table tbody tr:hover{background:rgba(0,212,255,.1);transform:scale(1.02);transition:all .3s ease}
+        .stage-name{color:#00d4ff;font-weight:600;font-size:1.1rem}
+        .csv-code{background:rgba(255,0,150,.2);padding:.2rem .5rem;border-radius:5px;font-family:'Courier New',monospace;color:#ff0096;font-weight:600}
+        @media(max-width:900px){
+          .stack-table thead{display:none}
+          .stack-table,.stack-table tbody,.stack-table tr,.stack-table td{display:block;width:100%}
+          .stack-table tr{margin:0 0 1rem;border:1px solid rgba(255,255,255,.08);border-radius:12px;overflow:hidden}
+          .stack-table td[data-label]::before{content:attr(data-label) " — ";font-weight:600;color:#00d4ff;display:block;margin-bottom:.25rem}
+        }
+        .section-title{font-size:clamp(2.5rem,5vw,4rem);background:linear-gradient(45deg,#fff,#00d4ff);
+          -webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:3rem;text-align:center}
+        .mastery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;margin-top:3rem}
+        .mastery-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:2rem;
+          backdrop-filter:blur(10px);transition:all .3s ease;cursor:pointer;outline:none}
+        .mastery-card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,212,255,.2)}
+        .mastery-card:focus-visible{box-shadow:0 0 0 3px rgba(0,212,255,.5),0 20px 40px rgba(0,212,255,.2)}
+        .detail-content{margin-top:2rem;opacity:0;max-height:0;overflow:hidden;transition:all .5s ease}
+        .detail-content.show{opacity:1;max-height:500px;border:1px solid rgba(0,212,255,.5);box-shadow:0 0 15px rgba(0,212,255,.3)}
+        .footer{background:rgba(0,0,0,.8);padding:3rem 0;text-align:center;border-top:1px solid rgba(255,255,255,.1)}
+        html{scroll-behavior:smooth}
+        @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+    </style>
+</head>
+<body>
+<div class="grain"></div>
+<a href="../../index.html" class="return-nav" style="position:fixed;top:2rem;left:2rem;z-index:1000;padding:.75rem 1.5rem;background:rgba(0,0,0,.8);border-radius:50px;text-decoration:none;color:#00d4ff">← Ukubona LLC</a>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1 class="logo">PAIRS@JH</h1>
+    <p class="tagline">Language-agnostic, recursion-aware analytics</p>
+    <p class="csv-highlight">Universal .csv → Transform → .csv Loop</p>
+    <p class="subtitle">Python. AI. R. Stata. JS/HTML.<br>Semantic consistency across all languages</p>
+    <a href="#recursive-stack" class="cta-button">Explore the Recursive Stack</a>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="text-align:center;color:#bbb">
+    <p><strong>Field-agnostic. Language-agnostic. Recursion-aware.</strong></p>
+    <p style="margin-top:.5rem">Plant (Camus) → Animal (Marx) → Man (Nietzsche) → Enterprise (Pyromancer) → System (Orwell/Serotonin).  
+    Same loop, different kernels. <span class="csv-code">.csv</span> is the contract.</p>
+  </div>
+</section>
+
+<section class="recursive-stack" id="recursive-stack">
+  <div class="container">
+    <h2 class="stack-title">The Recursive Stack</h2>
+    <table class="stack-table">
+      <thead>
+        <tr><th>Stage</th><th>Description</th><th>Tech Examples</th><th>Role in Recursive Stack</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Stage"><span class="stage-name">Input (Universal)</span></td>
+          <td data-label="Description"><span class="csv-code">.csv</span> or tabular data; lingua franca</td>
+          <td data-label="Tech">Any (Python, R, Stata, JS…)</td>
+          <td data-label="Role">🌊 L'Origine / Uncurated Data</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><span class="stage-name">Transform</span></td>
+          <td data-label="Description">Language-specific kernels reading/writing <span class="csv-code">.csv</span></td>
+          <td data-label="Tech">Python, R, Stata, JS</td>
+          <td data-label="Role">❤️ Logic binding input → output</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><span class="stage-name">Interface/Presentation</span></td>
+          <td data-label="Description">Rendering output for exploration</td>
+          <td data-label="Tech">HTML, Jinja, Shiny, Dash, React</td>
+          <td data-label="Role">🔁 Play / Interactive form</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><span class="stage-name">Styling/UX</span></td>
+          <td data-label="Description">Visual layers shaping user experience</td>
+          <td data-label="Tech">CSS, Tailwind, Bootstrap</td>
+          <td data-label="Role">🎭 Mask / Appearance</td>
+        </tr>
+        <tr>
+          <td data-label="Stage"><span class="stage-name">Behavior/Automation</span></td>
+          <td data-label="Description">Interaction & recursion</td>
+          <td data-label="Tech">JavaScript, Copilot, AI inference</td>
+          <td data-label="Role">🤖 Agency / Recursion</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="text-align:center;margin-top:2rem;color:#888;font-style:italic">
+      output → <span class="csv-code">.csv</span> → input → transform → output
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">Three Levels of Mastery</h2>
+    <div class="mastery-grid">
+      <div class="mastery-card" tabindex="0" role="button" aria-expanded="false" aria-controls="beginner"
+           onclick="toggleDetail(this,'beginner')" onkeydown="if(event.key==='Enter'||event.key===' '){toggleDetail(this,'beginner');event.preventDefault();}">
+        <h3 style="color:#00d4ff">Basic (Local)</h3>
+        <p style="color:#ccc">340.600 Stata Programming I</p>
+        <div class="detail-content" id="beginner">
+          <p>Starter kernels reading/writing <span class="csv-code">.csv</span>. Teach collaborators without assuming coding skills.</p>
+        </div>
+      </div>
+      <div class="mastery-card" tabindex="0" role="button" aria-expanded="false" aria-controls="intermediate"
+           onclick="toggleDetail(this,'intermediate')" onkeydown="if(event.key==='Enter'||event.key===' '){toggleDetail(this,'intermediate');event.preventDefault();}">
+        <h3 style="color:#00d4ff">Intermediate (Remote)</h3>
+        <p style="color:#ccc">340.700 Programming II</p>
+        <div class="detail-content" id="intermediate">
+          <p>GitHub-driven multi-language pipeline. Offline-first, cloud-ready.</p>
+        </div>
+      </div>
+      <div class="mastery-card" tabindex="0" role="button" aria-expanded="false" aria-controls="advanced"
+           onclick="toggleDetail(this,'advanced')" onkeydown="if(event.key==='Enter'||event.key===' '){toggleDetail(this,'advanced');event.preventDefault();}">
+        <h3 style="color:#00d4ff">Advanced (VS Code)</h3>
+        <p style="color:#ccc">340.800 Stata Programming III (TBA)</p>
+        <div class="detail-content" id="advanced">
+          <p>VS Code + Copilot + multi-kernel recursion. Flask APIs serve live <span class="csv-code">.csv</span> endpoints.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <p>© 2025 <a href="https://ukubona-llc.github.io/" style="color:#00d4ff;text-decoration:none">Ukubona LLC</a> | Designed for PAIRS@JH</p>
+    <p style="color:#888">Built with real tools for real work</p>
+  </div>
+</footer>
+
+<script>
+function toggleDetail(card,id){
+  const content=document.getElementById(id);
+  const expanded=content.classList.contains('show');
+  content.classList.toggle('show',!expanded);
+  content.style.display=expanded?'none':'block';
+  card.classList.toggle('expanded',!expanded);
+  card.setAttribute('aria-expanded',String(!expanded));
+}
+</script>
+</body>
+</html>
